@@ -29,13 +29,14 @@ $categories = get_all_categories($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Book Store</title>
+    <link rel="manifest" href="manifest.json">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="css/style.css">   
 </head>
 <body>
-    <div class="container">
-       
+  
+       <div class="container">
 <form action="search.php" style="width: 100%; max-width:30rem;" method="GET">
   <div class="input-group my-5">
   <input type="text" class="form-control" name="key" placeholder="Search Book...." aria-label="Search Book...." aria-describedby="basic-addon2">
@@ -144,7 +145,7 @@ $categories = get_all_categories($conn);
             <?php if($authors == 0){
                }else{?>
             <a href="#" class="list-group-item list-group-item-action active"
-            >Author</a>
+            >Authors</a>
             <?php foreach($authors as $author){ ?>
 
            
@@ -153,6 +154,7 @@ $categories = get_all_categories($conn);
           </div>
         </div>
 </div>
-    </div>
+   
+       </div>
 </body>
 </html>

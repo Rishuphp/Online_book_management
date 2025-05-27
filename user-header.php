@@ -8,6 +8,8 @@ if(isset($_SESSION['user_id1'])){
  include "db_conn.php";
 
 ?>
+
+    <link rel="manifest" href="manifest.json">
  
  <div class="container">
  <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -81,5 +83,24 @@ if(isset($_SESSION['user_id1'])){
       </ul>
     </div>
   </div>
-        </div>
+        
 </nav>
+ </div>
+<script type="text/javascript">
+ window.addEventListener('load',() => {
+  registerSW();
+ });
+ async function registerSW() {
+  if('serviceWorker' in navigator){
+    try{
+      await navigator
+      .serviceWorker
+      .register('service-worker.js');
+    }
+    catch (e){
+      console.log('Service Worker Registration Failed');
+    }
+  }
+ }
+  
+  </script>
